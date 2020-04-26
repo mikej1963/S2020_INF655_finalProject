@@ -1,0 +1,38 @@
+var business_info_international=0;
+function starratings_navigate() {
+	var w = window.open('http://www.starratingsusa.com/reviews/poolsplushutch', '_blank');
+	w.focus();
+}
+
+function starratings_showBadge(e, suffix, filetype) {
+    if( business_info_international==1 ) suffix += "-international";
+	var stars = "<div style='line-height: 12px; margin-left: 47px; margin-bottom: -1px; background-image: url(//www.starratingsusa.com/badge/sm5stars.gif); width: 80px; height: 17px;'>&nbsp;</div>";
+	var link = "<span style='line-height: 12px; text-shadow: none; color: white; text-decoration: underline; font-family: verdana, sans-serif; font-size: 10px; font-weight: normal;'>12 Customer Ratings</span>";
+	e.innerHTML = "<div onclick='starratings_navigate()' style='line-height: 12px; cursor: pointer; width: 175px; height: 116px; text-align: center; background-image: url(//www.starratingsusa.com/badge/bg-" + suffix + filetype + ")'><div style='height: 69px;'>&nbsp;</div>" + stars + link + "</div>";
+}
+
+window.onload = (function(pre){
+  return function(){
+    pre && pre.apply(this,arguments);
+    
+    var light = document.getElementById("star-ratings-usa-white");
+    if(light !== null) {
+    	starratings_showBadge(light, "light", ".jpg");
+    }
+    
+    var dark = document.getElementById("star-ratings-usa-black");
+    if(dark !== null) {
+    	starratings_showBadge(dark, "dark", ".jpg");
+    }
+
+    var transparent_for_light_backgrounds = document.getElementById("star-ratings-usa-transparent-for-light-backgrounds");
+    if(transparent_for_light_backgrounds !== null) {
+        starratings_showBadge(transparent_for_light_backgrounds, "transparent-for-light-backgrounds", ".png")
+    }
+
+    var transparent_for_dark_backgrounds = document.getElementById("star-ratings-usa-transparent-for-dark-backgrounds");
+    if(transparent_for_dark_backgrounds !== null) {
+        starratings_showBadge(transparent_for_dark_backgrounds, "transparent-for-dark-backgrounds", ".png")
+    }
+  }
+})(window.onload);
