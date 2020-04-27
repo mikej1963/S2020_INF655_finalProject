@@ -1,0 +1,11 @@
+/** Custom Style Sheet **/
+
+body {
+    background:blue;
+}
+
+/** Nav Bar Decoration **/
+.mynavbar{
+    background-image:linear-gradient(rgb(238, 241, 245), rgb(137, 178, 235));
+
+}
