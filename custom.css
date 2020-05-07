@@ -12,3 +12,16 @@ body {
     background-color: black;
     color: white;
 }
+
+/* Slider Section*/
+.carousel-caption {
+    margin-bottom: 10%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.carousel-caption h5 {
+    font-size: 40px;
+}
+.carousel-caption  p{
+    font-size: 20px;
+}
