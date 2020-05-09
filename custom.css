@@ -25,3 +25,10 @@ body {
 .carousel-caption  p{
     font-size: 20px;
 }
+
+/* Labels on forms*/
+label {
+  font : .8em "typewriter", sans-serif;
+  color: white;
+  background-color: black;
+}
